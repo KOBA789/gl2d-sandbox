@@ -1,0 +1,14 @@
+{
+  "extends": ["config:base"],
+  "packageRules": [
+    {
+      "updateTypes": ["minor", "patch"],
+      "automerge": true
+    },
+    {
+      "matchPackageNames": ["@types/react", "@types/react-dom"],
+      "groupName": ["react types"]
+    }
+  ],
+  "postUpdateOptions": ["yarnDedupeHighest"]
+}

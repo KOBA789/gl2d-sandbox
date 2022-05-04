@@ -1,0 +1,35 @@
+name: Lint
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Lint ESLint
+        run: yarn lint:eslint
+
+      - name: Lint Prettier
+        run: yarn lint:prettier
+
+      - name: Install wasm-pack
+        run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+
+      - name: Build crates
+        run: yarn build:crates
+
+      - name: TypeCheck
+        run: yarn typecheck
