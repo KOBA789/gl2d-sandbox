@@ -3,3 +3,4 @@
 /deploy/
 /crates/*/pkg
 /crates/*/target
+/crates/gl2d/src/shaders

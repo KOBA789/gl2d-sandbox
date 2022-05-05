@@ -6,7 +6,7 @@ varying vec2 coord2;
 
 void main() {
     if (coord2.x * coord2.x - coord2.y > 0.0) {
-		discard;
-	}
+        discard;
+    }
     gl_FragColor = frag_color;
 }

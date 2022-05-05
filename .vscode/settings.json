@@ -4,7 +4,5 @@
     "missing-unsafe",
     "mismatched-arg-count"
   ],
-  "rust-analyzer.linkedProjects": [
-    "crates/gl2d/Cargo.toml"
-  ]
+  "rust-analyzer.linkedProjects": ["crates/gl2d/Cargo.toml"]
 }
