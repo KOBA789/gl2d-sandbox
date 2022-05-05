@@ -2,9 +2,7 @@
 
 set -x -Cue
 
-ls
+curl -o rustup.sh --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs
+sh rustup.sh -y
 yarn
-npm install -g wasm-pack
-which wasm-pack
-cd crates
-strace wasm-pack build --target web --release gl2d
+yarn build
