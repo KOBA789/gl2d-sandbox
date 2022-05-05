@@ -1,17 +1,15 @@
-# itzmono-vite
+# gl2d-sandbox
 
-A project template for Vite + TypeScript + Rust + React + Tailwind CSS + Blueprint apps 🚀
+Scalable text rendering with WebGL + Rust + WASM
 
-## Batteries Included
+This does not use CPU for font rasterization and does not have a font atlas cache.
 
-- :zap: Vite 2
-- :shield: TypeScript
-- :crab: Rust (WebAssembly)
-- :boom: React
-- :wind_chime: Tailwind CSS
-- :package: Blueprint
-- :whale: Dockerfile
-- :globe_with_meridians: Nginx conf for SPA
-- :nail_care: Prettier & ESLint
-- :sparkles: Renovate
-- :robot: GitHub Actions (lint, build and push image)
+Instead, the shaders are used to render glyphs.
+
+## Demo
+
+https://gl2d-sandbox.pages.dev/
+
+## Algorithm
+
+This uses the algorithm based on [Easy Scalable Text Rendering on the GPU | by Evan Wallace | Medium](https://medium.com/@evanwallace/easy-scalable-text-rendering-on-the-gpu-c3f4d782c5ac) but anti-aliasing is not implemented.
