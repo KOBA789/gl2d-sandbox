@@ -1,0 +1,10 @@
+{
+  "rust-analyzer.cargo.target": "wasm32-unknown-unknown",
+  "rust-analyzer.diagnostics.disabled": [
+    "missing-unsafe",
+    "mismatched-arg-count"
+  ],
+  "rust-analyzer.linkedProjects": [
+    "crates/gl2d/Cargo.toml"
+  ]
+}

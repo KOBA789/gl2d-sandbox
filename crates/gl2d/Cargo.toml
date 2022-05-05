@@ -1,0 +1,44 @@
+[package]
+name = "gl2d"
+version = "0.1.0"
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+anyhow = "1"
+serde = { version = "1.0", features = ["derive"] }
+wasm-bindgen = { version = "0.2.80", features = ["serde-serialize"] }
+js-sys = "0.3.57"
+nalgebra = { version = "0.31", features = ["serde-serialize"] }
+itertools = "0.10"
+lazy_static = "1.4"
+serde_json = "1.0"
+bytemuck = "1.9"
+console_error_panic_hook = "0.1.7"
+owned_ttf_parser = "0.15.0"
+
+[dependencies.web-sys]
+version = "0.3.57"
+features = [
+  'console',
+  'Document',
+  'Element',
+  'HtmlCanvasElement',
+  'WebGlBuffer',
+  'WebGlRenderingContext',
+  'WebGlProgram',
+  'WebGlShader',
+  'Window',
+]
+
+[dependencies.glow]
+version = "0.11.0"
+
+[profile.dev]
+opt-level = 1
+dwarf-debug-info = true
+
+[profile.release]
+opt-level = "s"
